@@ -51,7 +51,6 @@ html.body {
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     margin: auto;
-    outline: orange dotted;
 }
 
 .slide {
