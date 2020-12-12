@@ -1,2 +1,2 @@
-# iPhone 12 Pro Max LiDAR Scanner Comparison
+# iPhone 12 Pro Max LiDAR Scanner APP Comparison
  
