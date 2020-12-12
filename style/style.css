@@ -1,0 +1,202 @@
+html.body {
+    width: 100%;
+    height: 100%;
+}
+
+#model-viewer-compare {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#ar-button {
+    position: absolute;
+    border-radius: 50px;
+    border: none;
+    bottom: 10px;
+    left: 10px;
+    padding: 5px;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-image: linear-gradient(to right, #009bff 0%, #00d2ff 100%);
+    z-index: 3；
+}
+
+#ar-button:active {
+    background-color: #E8EAED;
+}
+
+#ar-button:focus {
+    outline: none;
+}
+
+#ar-button:focus-visible {
+    outline: 1px solid #4285f4;
+}
+
+.slider {
+    height: 15%;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: absolute;
+    bottom: 16px;
+} 
+
+.slides {
+    height: 100%;
+    display: flex;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    margin: auto;
+    outline: orange dotted;
+}
+
+.slide {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 15vh;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.35);
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+}
+
+.slide.selected {
+    border: 2px solid #4285f4;
+}
+
+.slide:focus {
+    outline: none;
+}
+
+.slide:focus-visible {
+    outline: 1px solid #4285f4;
+}
+
+:not(:defined)>* {
+    display: none;
+}
+
+model-viewer#reveal {
+    --poster-color: transparent;
+}
+
+model-viewer {
+    --progress-bar-color: #4285f4;
+}
+
+.btn-annotation {
+    position: absolute;
+    color: #282828;
+    bottom: 0;
+    font-size: small;
+    margin: 0;
+}
+
+/* ========== media-query ============= */
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+    .step p, .step02 p {
+        font-size: 32px;
+    }
+    #annotation-foot01-wound {
+        font-size: 32px;
+    }
+}
+
+/* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .step p {
+        font-size: 28px;
+    }
+    #annotation-foot01-wound {
+        font-size: 28px;
+    }
+}
+
+/* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .step p {
+        font-size: 28px;
+    }
+    #annotation-foot01-wound {
+        font-size: 28px;
+    }
+    button[slot="ar-button"] {
+        font-size: 24px;
+    }
+}
+
+/* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .step p {
+        font-size: 28px;
+    }
+    #annotation-foot01-wound {
+        font-size: 28px;
+    }
+    button[slot="ar-button"] {
+        font-size: 24px;
+    }
+}
+
+/* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .step p {
+        font-size: 28px;
+    }
+    #annotation-foot01-wound {
+        font-size: 28px;
+    }
+    button[slot="ar-button"] {
+        font-size: 14px;
+    }
+}
+
+/* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .step p {
+        font-size: 18px;
+    }
+    #annotation-foot01-wound {
+        font-size: 14px;
+    }
+    button[slot="ar-button"] {
+        font-size: 16px;
+    }
+}

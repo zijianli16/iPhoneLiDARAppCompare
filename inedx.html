@@ -1,0 +1,92 @@
+<html lang="zh-Hans">
+
+<head>
+    <title>
+        iPhone LiDAR建模比较
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--Import the Google model-viewer component-->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    <!--End of Google model-viewer-->
+
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <div id="model-viewer">
+        <div class="model-viewer-container">
+            <model-viewer class="model-viewer-stem" id="model-viewer-compare" loading="eager" ar
+                src="3DAssets/CaseBoxShoe_RC.glb" ios-src="3DAssets/CaseBoxShoe_RC.usdz" alt="Here is a 3D model"
+                exposure="1" environment-image="https://alexli016.github.io/modelviewer/white_bg.jpg" camera-controls
+                field-of-view="45deg" interaction-prompt-style="wiggle" quick-look-browsers="safari chrome">
+
+                <button id="ar-button" slot="ar-button">
+                    AR功能
+                </button>
+
+                <div class="slider">
+                    <div class="slides">
+                        <button class="slide selected" onclick="switchSrc(this, 'RC')"
+                            style="background-image: url('images/RC.png');">
+                            <p class="btn-annotation"> Reality Capture </p>
+                        </button>
+
+                        <button class="slide" onclick="switchSrc(this, '3DScannerApp')"
+                            style="background-image: url('images/3DScannerApp.png');">
+                            <p class="btn-annotation"> 3D Scanner App </p>
+                        </button>
+
+                        <button class="slide" onclick="switchSrc(this, 'PolyCam')"
+                            style="background-image: url('images/PolyCam.png');">
+                            <p class="btn-annotation" style="color: white;"> PolyCam </p>
+                        </button>
+
+                    </div>
+                </div>
+            </model-viewer>
+        </div>
+
+    </div>
+
+    <figcaption class="figCaption">作者：李子健</figcaption>
+
+    <div>
+        <p>Reality Capture:
+            <br>
+            用时：
+            </br>
+            文件大小
+            </br>
+            GLB:
+            <br>
+            USDZ:
+        </p>
+    </div>
+    <!-- =================DELETE THIS PART================= -->
+
+    <script>
+        const modelViewerCompare = document.querySelector("#model-viewer-compare");
+
+        window.switchSrc = (element, name) => {
+            const base = "3DAssets/CaseBoxShoe_" + name;
+            let iosSrc = document.getElementById("model-viewer-compare").getAttribute("ios-src");
+
+            modelViewerCompare.src = base + '.glb';
+            modelViewerCompare.iosSrc = base + '.usdz';
+            //modelViewerCompare.poster = base + '_poster.png';
+
+
+            const slides = document.querySelectorAll(".slide");
+            slides.forEach((element) => { element.classList.remove("selected"); });
+            element.classList.add("selected");
+        };
+    </script>
+
+</body>
+
+</html>
